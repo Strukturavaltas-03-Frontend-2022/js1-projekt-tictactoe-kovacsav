@@ -1,0 +1,26 @@
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.cell {
+  width: 50px;
+  height: 50px;
+  background-color: rgb(31, 195, 245);
+  margin: 2px;
+}
+
+
+
+/* .rectangle{
+  fill: rgb(40, 163, 204);
+  border: 5px solid olive;
+  padding: 0px;
+  margin: 0%;
+}
+
+.text{
+  display: none;
+  font-size: 30px;
+  fill: antiquewhite;
+} */
