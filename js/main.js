@@ -179,7 +179,7 @@ Ha valaki győzött, akkor pl. egy ilyen tömböt kapunk: [true, false, false]
 const checkValues = (array) =>
   array
     .map((row) => {
-      /*Ide írd a kódot!*/
+      row.every((item) => item === 0) || row.every((item) => item === 0);
     })
     .indexOf(true) !== -1;
 /*
@@ -210,10 +210,20 @@ amely...
 */
 const checkWinner = () => {
   // ...kiírja a konzolra a checkColumnValues()t és a checkDiagonalValues()-t,
+  console.log(
+    "checkColumnValues: ",
+    checkColumnValues(),
+    "checkDiagonalValues: ",
+    checkDiagonalValues()
+  );
+
   /*
     majd meghívja az endGame()-et, ha hogy HA
     a checkValues(matrix) vagy a checkColumnValues() vagy a checkDiagonalValues() igaz.
     */
+  if (checkValues(matrix) || checkColumnValues() || checkDiagonalValues()) {
+    endGame();
+  }
 };
 
 /**
@@ -224,7 +234,9 @@ Fejtsd ki a setMessage elnevezésű függvényt,
 amely kiválasztja a message osztályú elemet, 
 és az üzenetet állítja be a div tartalmának.
 */
-const setMessage = (message) => {};
+const setMessage = (message) => {
+  document.querySelector(".message").textContent(message);
+};
 
 /**
 Fejtsd ki a startGame elnevezésű függvényt, 
@@ -233,7 +245,11 @@ amely meghívja a következő függvényeket:
 - addClickListener()
 - newGame()
 */
-const startGame = () => {};
+const startGame = () => {
+  initState();
+  addClickListener();
+  newGame();
+};
 
 /**
 Fejtsd ki az endGame elnevezésű függvényt, 
@@ -248,7 +264,10 @@ Ez az utóbbi kódrészlet kiválasztja azt a jelet, amellyel a nyertes játszot
 
 Ezután a függvény meghívja a removeAllClickListeners() nevű függvényt.
 */
-const endGame = () => {};
+const endGame = () => {
+  setMessage("The winner is Player " + (mark === "X" ? "0" : "X") + ".");
+  removeAllClickListeners();
+};
 
 /*
 Indíts el egy új játékot az alábbi függvény segítségével!
@@ -257,6 +276,14 @@ Hozz létre a HTML-ben a játéktéren kívül egy gombot!
 */
 const newGame = () => {
   // Válaszd ki a gombot!
+
+  document.querySelector(".newGame").addEventListener("click", () => {
+    initState();
+    addClickListener();
+    deleteSigns();
+    setMessage("Playing...");
+    setMark();
+  });
   /*
     Tegyél rá/adj hozzá egy eseményfigyelőt, 
     amely kattintásra meghívja a következő függvényeket:
