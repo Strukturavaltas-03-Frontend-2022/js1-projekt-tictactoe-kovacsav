@@ -97,7 +97,7 @@ Fejtsd ki az increaseCounter elnevezésű függvényt,
 amely a megtett lépések számát növeli eggyel.
 */
 const increaseCounter = () => {
-  stepCount++;
+  stepCount += 1;
 };
 
 /**
@@ -118,7 +118,7 @@ akkor beállítja a 0-t, hiszen a másik játékos azzal fog tenni egy jelet,
 ha pedig a 0-t használtuk, beállítja az X-et.
 */
 const setMark = () => {
-  mark = mark === "X" ? "0" : "X";
+  mark = mark === "X" ? "O" : "X";
   /*  if (mark === "X") {
     mark = "0"
   } else {
@@ -178,9 +178,10 @@ Ha valaki győzött, akkor pl. egy ilyen tömböt kapunk: [true, false, false]
 */
 const checkValues = (array) =>
   array
-    .map((row) => {
-      row.every((item) => item === 0) || row.every((item) => item === 0);
-    })
+    .map(
+      (row) =>
+        row.every((item) => item === "X") || row.every((item) => item === "O")
+    )
     .indexOf(true) !== -1;
 /*
     Ha true-t kapunk visza adott sorra, akkor 
@@ -235,7 +236,7 @@ amely kiválasztja a message osztályú elemet,
 és az üzenetet állítja be a div tartalmának.
 */
 const setMessage = (message) => {
-  document.querySelector(".message").textContent(message);
+  document.querySelector(".message").textContent = message;
 };
 
 /**
@@ -265,7 +266,7 @@ Ez az utóbbi kódrészlet kiválasztja azt a jelet, amellyel a nyertes játszot
 Ezután a függvény meghívja a removeAllClickListeners() nevű függvényt.
 */
 const endGame = () => {
-  setMessage("The winner is Player " + (mark === "X" ? "0" : "X") + ".");
+  setMessage("The winner is Player " + (mark === "X" ? "O" : "X") + ".");
   removeAllClickListeners();
 };
 
