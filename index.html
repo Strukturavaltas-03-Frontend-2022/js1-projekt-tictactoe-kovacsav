@@ -10,105 +10,41 @@
 </head>
 
 <body>
-  <header>
-    <h1>Amőba játék</h1>
+  <header class="border">
+    <h1 class="border">Amőba játék</h1>
 
-    <h4>A játékosok felváltva lépnek a mezőkbe, az a játkos nyer, akinek hamarabb lesz egy sorban vagy átlóban három
-      azonos jele.</h4>
-    <h4>Jó játékot és győzzön a jobb!</h4>
-    <h4>(Senki ne keserdjen el, kis gyakorlással sokat lehet fejlődni.)</h4>
+    <h3>A játék menete és célja:</h3>
+    <h4>A játékosok felváltva lépnek a mezőkbe, az a játkos nyer, akinek hamarabb lesz egy sorban
+      vagy átlóban három azonos jele.</h4>
+    <h3>Jó játékot és győzzön a jobb!</h3>
+    <h4>Senki ne keserdjen el, ha először nem győz, kis gyakorlással sokat lehet fejlődni.</h4>
   </header>
 
   <main>
 
     <div class="container">
 
-      <div class="row">
-        <div data-cell="0" data-row="0" class="cell leftTopCorner"></div>
-        <div data-cell="1" data-row="0" class="cell"></div>
-        <div data-cell="2" data-row="0" class="cell rightTopCorner"></div>
-      </div>
+      <div class="playgraund">
 
-      <div class="row">
-        <div data-cell="0" data-row="1" class="cell"></div>
-        <div data-cell="1" data-row="1" class="cell"></div>
-        <div data-cell="2" data-row="1" class="cell"></div>
-      </div>
-      <div class="row">
-        <div data-cell="0" data-row="2" class="cell leftBottomCorner"></div>
-        <div data-cell="1" data-row="2" class="cell"></div>
-        <div data-cell="2" data-row="2" class="cell rightBottomCorner"></div>
-      </div>
+        <div class="row">
+          <div data-cell="0" data-row="0" class="cell leftTopCorner"></div>
+          <div data-cell="1" data-row="0" class="cell"></div>
+          <div data-cell="2" data-row="0" class="cell rightTopCorner"></div>
+        </div>
 
-
-      <!-- 
-
-        <svg width="100px" height="100px">
-          <rect class="rectangle first first" width="100%" height="100%" />
-          <text class="text first" x="40" y="60">O</text>
-          <text class="text second" x="40" y="60">X</text>
-        </svg>
-
-        <svg width="100px" height="100px">
-          <rect class="rectangle first second" width="100%" height="100%" />
-          <text class="text first" x="40" y="60">O</text>
-          <text class="text second" x="40" y="60">X</text>
-        </svg>
-
-        <svg width="100px" height="100px">
-          <rect class="rectangle first third" width="100%" height="100%" />
-          <text class="text first" x="40" y="60">O</text>
-          <text class="text third" x="40" y="60">X</text>
-        </svg>
+        <div class="row">
+          <div data-cell="0" data-row="1" class="cell"></div>
+          <div data-cell="1" data-row="1" class="cell"></div>
+          <div data-cell="2" data-row="1" class="cell"></div>
+        </div>
+        <div class="row">
+          <div data-cell="0" data-row="2" class="cell leftBottomCorner"></div>
+          <div data-cell="1" data-row="2" class="cell"></div>
+          <div data-cell="2" data-row="2" class="cell rightBottomCorner"></div>
+        </div>
 
       </div>
 
-      <div class="row">
-
-        <svg width="100px" height="100px">
-          <rect class="rectangle second first" width="100%" height="100%" />
-          <text class="text first" x="40" y="60">O</text>
-          <text class="text second" x="40" y="60">X</text>
-        </svg>
-
-        <svg width="100px" height="100px">
-          <rect class="rectangle second second" width="100%" height="100%" />
-          <text class="text first" x="40" y="60">O</text>
-          <text class="text second" x="40" y="60">X</text>
-        </svg>
-
-        <svg width="100px" height="100px">
-          <rect class="rectangle second third" width="100%" height="100%" />
-          <text class="text first" x="40" y="60">O</text>
-          <text class="text third" x="40" y="60">X</text>
-        </svg>
-
-      </div>
-
-      <div class="row">
-
-        <svg width="100px" height="100px">
-          <rect class="rectangle third first" width="100%" height="100%" />
-          <text class="text first" x="40" y="60">O</text>
-          <text class="text second" x="40" y="60">X</text>
-        </svg>
-
-        <svg width="100px" height="100px">
-          <rect class="rectangle third second" width="100%" height="100%" />
-          <text class="text first" x="40" y="60">O</text>
-          <text class="text second" x="40" y="60">X</text>
-        </svg>
-
-        <svg width="100px" height="100px">
-          <rect class="rectangle third third" width="100%" height="100%" />
-          <text class="text first" x="40" y="60">O</text>
-          <text class="text third" x="40" y="60">X</text>
-        </svg>
-
-      </div>
-
-    </div>
- -->
 
       <div>
         <h2 class="message">Gyere játszani!</h2>

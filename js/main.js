@@ -226,6 +226,7 @@ const checkWinner = () => {
   if (checkValues(matrix) || checkColumnValues() || checkDiagonalValues()) {
     endGame("winner");
   }
+
   // létezik olyan eset, hogy senki nem győz, és betelik a tábla
 
   console.log("checkValues: ", checkValues(matrix));
@@ -283,7 +284,7 @@ Ezután a függvény meghívja a removeAllClickListeners() nevű függvényt.
 const endGame = (winner) => {
   if (winner === "winner") {
     setMessage(
-      "Gartulálunk! A " +
+      "Gartulálunk! Az " +
         (mark === "X" ? "O" : "X") +
         " játékos nyerte a játékot!"
     );

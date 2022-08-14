@@ -1,11 +1,34 @@
-h1, h2, h3, h4{
+h1, h2{
   text-align: center;
 }
-  
+
+h3, h4 {
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 0;
+}
+
+h4 {
+  margin-left: 20%;
+}
+
+.border {
+  margin-top: 10px;
+  margin-left: 10%;
+  margin-right: 10%;
+  padding-bottom: 5px;
+  /*background-color: rgb(141, 220, 244);*/
+  border-bottom: 1px rgb(31, 195, 245) solid;
+}
+
 main {
     display: flex;
     justify-content: center;
   }
+
+.container {
+  margin-top: 20px;
+}
 
 .button__div {
   display: flex;
