@@ -43,6 +43,7 @@ const initState = () => {
       matrix[i][j] = null;
     }
   }
+  stepCount = 0;
 };
 
 //initState();
@@ -223,7 +224,21 @@ const checkWinner = () => {
     a checkValues(matrix) vagy a checkColumnValues() vagy a checkDiagonalValues() igaz.
     */
   if (checkValues(matrix) || checkColumnValues() || checkDiagonalValues()) {
-    endGame();
+    endGame("winner");
+  }
+  // létezik olyan eset, hogy senki nem győz, és betelik a tábla
+
+  console.log("checkValues: ", checkValues(matrix));
+  console.log("checkColumnValues: ", checkColumnValues());
+  console.log("checkDiagonalValues: ", checkDiagonalValues());
+  console.log("stepCount: ", stepCount);
+
+  if (
+    !(checkValues(matrix) & checkColumnValues() & checkDiagonalValues()) &
+    (stepCount === 9)
+  ) {
+    console.log(stepCount);
+    endGame("noWinner");
   }
 };
 
@@ -265,8 +280,19 @@ Ez az utóbbi kódrészlet kiválasztja azt a jelet, amellyel a nyertes játszot
 
 Ezután a függvény meghívja a removeAllClickListeners() nevű függvényt.
 */
-const endGame = () => {
-  setMessage("The winner is Player " + (mark === "X" ? "O" : "X") + ".");
+const endGame = (winner) => {
+  if (winner === "winner") {
+    setMessage(
+      "Gartulálunk! A " +
+        (mark === "X" ? "O" : "X") +
+        " játékos nyerte a játékot!"
+    );
+  }
+  if (winner === "noWinner") {
+    setMessage(
+      "Mind a ketten nagyon jól játszottatok, így győztes nem született!"
+    );
+  }
   removeAllClickListeners();
 };
 
@@ -282,7 +308,7 @@ const newGame = () => {
     initState();
     addClickListener();
     deleteSigns();
-    setMessage("Playing...");
+    setMessage("Játék...");
     setMark();
   });
   /*

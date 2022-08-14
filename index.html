@@ -12,6 +12,11 @@
 <body>
   <header>
     <h1>Amőba játék</h1>
+
+    <h4>A játékosok felváltva lépnek a mezőkbe, az a játkos nyer, akinek hamarabb lesz egy sorban vagy átlóban három
+      azonos jele.</h4>
+    <h4>Jó játékot és győzzön a jobb!</h4>
+    <h4>(Senki ne keserdjen el, kis gyakorlással sokat lehet fejlődni.)</h4>
   </header>
 
   <main>
@@ -19,9 +24,9 @@
     <div class="container">
 
       <div class="row">
-        <div data-cell="0" data-row="0" class="cell"></div>
+        <div data-cell="0" data-row="0" class="cell leftTopCorner"></div>
         <div data-cell="1" data-row="0" class="cell"></div>
-        <div data-cell="2" data-row="0" class="cell"></div>
+        <div data-cell="2" data-row="0" class="cell rightTopCorner"></div>
       </div>
 
       <div class="row">
@@ -30,9 +35,9 @@
         <div data-cell="2" data-row="1" class="cell"></div>
       </div>
       <div class="row">
-        <div data-cell="0" data-row="2" class="cell"></div>
+        <div data-cell="0" data-row="2" class="cell leftBottomCorner"></div>
         <div data-cell="1" data-row="2" class="cell"></div>
-        <div data-cell="2" data-row="2" class="cell"></div>
+        <div data-cell="2" data-row="2" class="cell rightBottomCorner"></div>
       </div>
 
 
@@ -105,14 +110,14 @@
     </div>
  -->
 
-      <div class="message">
-        Let's play!
+      <div>
+        <h2 class="message">Gyere játszani!</h2>
       </div>
 
-      <div class="end">
+      <!-- <div class="end">
         <h2>Gartulálunk! A <span>játékos</span> nyerte a játékot!</h2>
         <h3>Sajnáljuk, a játék győztes nélkül ért véget!</h3>
-      </div>
+      </div> -->
 
       <div class="button__div">
         <button class="newGame">Új játék</button>

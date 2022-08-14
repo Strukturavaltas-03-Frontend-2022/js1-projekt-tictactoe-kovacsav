@@ -1,4 +1,4 @@
-h1, h2, h3{
+h1, h2, h3, h4{
   text-align: center;
 }
   
@@ -19,13 +19,31 @@ main {
 }
 
 .cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 50px;
   height: 50px;
   background-color: rgb(31, 195, 245);
   margin: 2px;
+  color: white;
 }
 
+.leftTopCorner {
+  border-radius: 10% 0 0 0;
+}
 
+.rightTopCorner {
+  border-radius: 0 10% 0 0;
+}
+
+.rightBottomCorner {
+  border-radius: 0 0 10% 0;
+}
+
+.leftBottomCorner {
+  border-radius: 0 0 0 10%;
+}
 
 /* .rectangle{
   fill: rgb(40, 163, 204);
